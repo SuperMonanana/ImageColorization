@@ -61,18 +61,21 @@
 
 <p>We basically followed the structure of our reference paper, but we made some improvements to achieve better output image quality and faster reconstruction speed.</p>
 
-<p><strong>1. Histogram correction</strong>
-Desired target histogram is modeled as Gaussian mixture model and the number of components are equal to the modes obtained by performing mean-shift clustering modes in the histogram of the target images. Then corresponding modes in the histogram of source images are found with known M components of the target histogram and source histogram. In the paper, histogram correction is achieved using the scene specific mean histogram (normalized from training data). We add a fraction of ground-truth histogram from least variation training set so that multi-scene training images have less impact on specific theme result. </p>
+<p><strong>1. Histogram correction</strong></p>
+
+<p>Desired target histogram is modeled as Gaussian mixture model and the number of components are equal to the modes obtained by performing mean-shift clustering modes in the histogram of the target images. Then corresponding modes in the histogram of source images are found with known M components of the target histogram and source histogram. In the paper, histogram correction is achieved using the scene specific mean histogram (normalized from training data). We add a fraction of ground-truth histogram from least variation training set so that multi-scene training images have less impact on specific theme result. </p>
 
 <p><strong>2. Parameter experiment</strong></p>
 
-<p>(1) maxdepth
-Maxdepth is the parameter used to describe the length of decision tree. As we increase decision tree, learning time is slightly longer, but quality of result image is also better.
+<p>(1) maxdepth</p>
+
+<p>Maxdepth is the parameter used to describe the length of decision tree. As we increase decision tree, learning time is slightly longer, but quality of result image is also better.
 Img1 img2
 We tested cases: Maxdepth=30 and Maxdepth=60, the latter has mildly quality improvement</p>
 
-<p>(2) features to be sampled per train image
-Number of features per train image is proportional to dimension of b(I) which represents the splits in each node so that decreasing features per train image greatly shortens time while degrade reconstruction image to a slight extend.
+<p>(2) features to be sampled per train image</p>
+
+<p>Number of features per train image is proportional to dimension of b(I) which represents the splits in each node so that decreasing features per train image greatly shortens time while degrade reconstruction image to a slight extend.
 Img1 img2
 We tested cases: fperi=5000 V.S. fperi=1000, the latter has negligible inferior quality but far faster than the former.</p>
 
