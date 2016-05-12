@@ -84,15 +84,7 @@
 
 <p><img src="https://raw.githubusercontent.com/SuperMonanana/ImageColorization/master/data/test_1_recon_color-hist_1-1.tif" alt=""> <img src="https://raw.githubusercontent.com/SuperMonanana/ImageColorization/master/data/test_1_recon_color-gt_hist_2-1.tif" alt=""> <img src="https://github.com/SuperMonanana/ImageColorization/blob/master/data/colorbeach.png?raw=true" alt=""> </p>
 
-<p><strong>2. Parameter experiment</strong></p>
-
-<p>Features to be sampled per train image</p>
-
-<p>Number of features per train image is proportional to dimension of b(I) which represents the splits in each node so that decreasing features per train image greatly shortens time while degrade reconstruction image to a slight extend.</p>
-
-<p>We tested cases: fperi=5000 V.S. fperi=1000, the latter has negligible inferior quality but far faster than the former.</p>
-
-<p><strong>3. Regression features</strong></p>
+<p><strong>2. Regression features</strong></p>
 
 <p>Split features determine the splits in regression tree which provide description for the classification of pixels with similar characteristics. Regression features are used as predictors which embody properties of the neighborhood and exhibit a strong correlation to the color. 
 In the paper, regression features compose texture plus global image features (top pyramid grayscale image intensity) which occasionally brings to bad outcome due to large variation of lightness in image sets as we speculate. Therefore we dropped global image features, leave merely texture image features and obtained better results.</p>
@@ -101,7 +93,7 @@ In the paper, regression features compose texture plus global image features (to
 
 <p><img src="https://raw.githubusercontent.com/SuperMonanana/ImageColorization/master/data/meanhist.tif" alt=""></p>
 
-<p><strong>4. LEARCH objective function and the Bhattacharyya distance</strong></p>
+<p><strong>3. LEARCH objective function and the Bhattacharyya distance</strong></p>
 
 <p>The final objective function is a weighted sum of LEARCH objective function and the Bhattacharyya distance which ensures spatial coherence while performing histogram correction. The complete objective function denoted as: bDist = bDist + lambda.*bLearch. Adjusting  influences this trade-off as bigger provides steeper color variation which displayed below.</p>
 
