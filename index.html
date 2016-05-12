@@ -90,7 +90,9 @@ In the paper, regression features compose texture plus global image features (to
 
 <p><strong>4. LEARCH objective function and the Bhattacharyya distance</strong></p>
 
-<p>The final objective function is a weighted sum of LEARCH objective function and the Bhattacharyya distance which ensures spatial coherence while performing histogram correction. The complete objective function denoted as: bDist = bDist + lambda.*bLearch. Adjusting  influences this trade-off as bigger  provides steeper color variation which displayed below.</p>
+<p>The final objective function is a weighted sum of LEARCH objective function and the Bhattacharyya distance which ensures spatial coherence while performing histogram correction. The complete objective function denoted as: bDist = bDist + lambda.*bLearch. Adjusting  influences this trade-off as bigger provides steeper color variation which displayed below.</p>
+
+<p>Lambda=0.5, 5(the original setting in the paper), 50 are applied in the following results.</p>
 
 <p><img src="https://raw.githubusercontent.com/SuperMonanana/ImageColorization/master/data/lambda0.5.tif" alt=""> <img src="https://raw.githubusercontent.com/SuperMonanana/ImageColorization/master/data/lambda5.tif" alt=""> <img src="https://raw.githubusercontent.com/SuperMonanana/ImageColorization/master/data/lambda50.tif" alt=""></p>
 
@@ -103,7 +105,7 @@ In the paper, regression features compose texture plus global image features (to
 <p>Failed case is like this from which we can see the limit of this method.
 <img src="https://raw.githubusercontent.com/SuperMonanana/ImageColorization/master/data/campusfail.tif" alt=""> <img src="https://github.com/SuperMonanana/ImageColorization/blob/master/data/color.png?raw=true" alt=""></p>
 
-<p>We suppose it is difficult for this method to predict picture with more depth.</p>
+<p>We suppose it is difficult for this method to predict picture with more depth because this method used gradient for prediction. Also from the successful cases in Best Results section, we found that the performance is always better when predicting the sky because of the bigger contrast between sky and the other parts of the image, which should reflect the grey-image intensity as it is an important split feature.</p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/SuperMonanana/ImageColorization">CSE555 Final Project - Automatic Image Colorization</a> is maintained by <a href="https://github.com/SuperMonanana">SuperMonanana</a>.</span>
