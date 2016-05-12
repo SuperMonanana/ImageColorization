@@ -69,7 +69,7 @@
 
 <p><strong>1. Histogram correction</strong></p>
 
-<p>Desired target histogram is modeled as Gaussian mixture model and the number of components are equal to the modes obtained by performing mean-shift clustering modes in the histogram of the target images. Then corresponding modes in the histogram of source images are found with known M components of the target histogram and source histogram. In the paper, histogram correction is achieved using the scene specific mean histogram (normalized from training data). We add a fraction of ground-truth histogram from least variation training set so that multi-scene training images have less impact on specific theme result.</p>
+<p>Desired target histogram is modeled as Gaussian mixture model and the number of components are equal to the modes obtained by performing mean-shift clustering modes in the histogram of the target images. Then corresponding modes in the histogram of source images are found with known M components of the target histogram and source histogram. In the paper, histogram correction is achieved using the scene specific mean histogram (normalized from training data). 9 noise image together with the one training image are used to compute the mean histogram. We add a fraction of ground-truth histogram from least variation training set so that multi-scene training images have less impact on specific theme result.</p>
 
 <p>The left applied mean histogram, the middle applied our modified histogram correction method, and the right is the ground truth.</p>
 
@@ -105,7 +105,7 @@ In the paper, regression features compose texture plus global image features (to
 <p>Failed case is like this from which we can see the limit of this method.
 <img src="https://raw.githubusercontent.com/SuperMonanana/ImageColorization/master/data/campusfail.tif" alt=""> <img src="https://github.com/SuperMonanana/ImageColorization/blob/master/data/color.png?raw=true" alt=""></p>
 
-<p>We suppose it is difficult for this method to predict picture with more depth because this method used gradient for prediction. Also from the successful cases in Best Results section, we found that the performance is always better when predicting the sky because of the bigger contrast between sky and the other parts of the image, which should reflect the grey-image intensity as it is an important split feature.</p>
+<p>We suppose it is difficult for this method to predict picture with more depth of field because it is harder to extract features that special enough to represents a patch in regions with more depth which is usually smaller. Also from the successful cases in Best Results section, we found that the performance is always better when predicting the sky because of the bigger contrast between sky and the other parts of the image, which should reflect the grey-image intensity as it is an important split feature.</p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/SuperMonanana/ImageColorization">CSE555 Final Project - Automatic Image Colorization</a> is maintained by <a href="https://github.com/SuperMonanana">SuperMonanana</a>.</span>
