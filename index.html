@@ -119,9 +119,11 @@ In the paper, regression features compose texture plus global image features (to
 <p>Also from the successful cases in Best Results section, we found that the performance is always better when predicting the sky because of the bigger contrast between sky and the other parts of the image, which should reflect the grey-image intensity as it is an important split feature. Therefore, this method is hard for distinguishing similar colors.</p>
 
 <p>Some failed case looks aesthetic although its prediction is relatively wrong.
-<img src="https://raw.githubusercontent.com/SuperMonanana/ImageColorization/master/data/tricky.tif" alt=""> <img src="https://github.com/SuperMonanana/ImageColorization/blob/master/data/tricky_gt.png?raw=true" alt=""></p>
+<img src="https://raw.githubusercontent.com/SuperMonanana/ImageColorization/master/data/tricky.tif" alt=""> <img src="https://github.com/SuperMonanana/ImageColorization/blob/master/data/tricky_gt.jpg?raw=true" alt=""></p>
 
 <p>This case illustrates that the luminance could have a big impact on the result and therefore we suppose it would give better result if we balance the brightness of all training images first.</p>
+
+<p>The other limitation concerns all machine learning problem is the out-of-dataset bias. Therefore, the larger scale training data could produce better result. </p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/SuperMonanana/ImageColorization">CSE555 Final Project - Automatic Image Colorization</a> is maintained by <a href="https://github.com/SuperMonanana">SuperMonanana</a>.</span>
