@@ -63,8 +63,11 @@
 
 <p><strong>1. Histogram correction</strong></p>
 
-<p>Desired target histogram is modeled as Gaussian mixture model and the number of components are equal to the modes obtained by performing mean-shift clustering modes in the histogram of the target images. Then corresponding modes in the histogram of source images are found with known M components of the target histogram and source histogram. In the paper, histogram correction is achieved using the scene specific mean histogram (normalized from training data). We add a fraction of ground-truth histogram from least variation training set so that multi-scene training images have less impact on specific theme result. 
-<img src="https://raw.githubusercontent.com/SuperMonanana/ImageColorization/master/data/test_1_recon_color-hist_1-1.tif" alt=""> <img src="https://raw.githubusercontent.com/SuperMonanana/ImageColorization/master/data/test_1_recon_color-gt_hist_2-1.tif" alt=""> <img src="https://github.com/SuperMonanana/ImageColorization/blob/master/data/color.png?raw=true" alt=""></p>
+<p>Desired target histogram is modeled as Gaussian mixture model and the number of components are equal to the modes obtained by performing mean-shift clustering modes in the histogram of the target images. Then corresponding modes in the histogram of source images are found with known M components of the target histogram and source histogram. In the paper, histogram correction is achieved using the scene specific mean histogram (normalized from training data). We add a fraction of ground-truth histogram from least variation training set so that multi-scene training images have less impact on specific theme result.</p>
+
+<p>The left applied mean histogram, the middle applied our modified histogram correction method, and the right is the ground truth.</p>
+
+<p><img src="https://raw.githubusercontent.com/SuperMonanana/ImageColorization/master/data/test_1_recon_color-hist_1-1.tif" alt=""> <img src="https://raw.githubusercontent.com/SuperMonanana/ImageColorization/master/data/test_1_recon_color-gt_hist_2-1.tif" alt=""> <img src="https://github.com/SuperMonanana/ImageColorization/blob/master/data/color.png?raw=true" alt=""></p>
 
 <p><strong>2. Parameter experiment</strong></p>
 
