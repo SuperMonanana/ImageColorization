@@ -59,13 +59,14 @@
 <a id="algorithm" class="anchor" href="#algorithm" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><strong>Algorithm</strong>
 </h3>
 
-<p>Did you exactly replicate a prior work? Almost? What differences do you have? You may use code that implements the main idea of your project, but then you must have a project that explores modifications to the basic code, a substantially different dataset or for a different purpose than the original authors intended.</p>
+<p>We basically followed the structure of our reference paper, but we made some improvements to achieve better output image quality and faster reconstruction speed.</p>
 
-<p>We basically followed the structure of our reference paper, but we made some improvements to achieve better output image quality and faster reconstruction speed.
-<strong>1. Histogram correction</strong>
-Desired target histogram is modeled as Gaussian mixture model and the number of components are equal to the modes obtained by performing mean-shift clustering modes in the histogram of the target images. Then corresponding modes in the histogram of source images are found with known M components of the target histogram and source histogram. In the paper, histogram correction is achieved using the scene specific mean histogram (normalized from training data). We add a fraction of ground-truth histogram from least variation training set so that multi-scene training images have less impact on specific theme result. 
-<strong>2. Parameter experiment</strong>
-(1) maxdepth
+<p><strong>1. Histogram correction</strong>
+Desired target histogram is modeled as Gaussian mixture model and the number of components are equal to the modes obtained by performing mean-shift clustering modes in the histogram of the target images. Then corresponding modes in the histogram of source images are found with known M components of the target histogram and source histogram. In the paper, histogram correction is achieved using the scene specific mean histogram (normalized from training data). We add a fraction of ground-truth histogram from least variation training set so that multi-scene training images have less impact on specific theme result. </p>
+
+<p><strong>2. Parameter experiment</strong></p>
+
+<p>(1) maxdepth
 Maxdepth is the parameter used to describe the length of decision tree. As we increase decision tree, learning time is slightly longer, but quality of result image is also better.
 Img1 img2
 We tested cases: Maxdepth=30 and Maxdepth=60, the latter has mildly quality improvement</p>
@@ -75,12 +76,14 @@ Number of features per train image is proportional to dimension of b(I) which re
 Img1 img2
 We tested cases: fperi=5000 V.S. fperi=1000, the latter has negligible inferior quality but far faster than the former.</p>
 
-<p><strong>3. Regression features</strong>
-Split features determine the splits in regression tree which provide description for the classification of pixels with similar characteristics. Regression features are used as predictors which embody properties of the neighborhood and exhibit a strong correlation to the color. 
+<p><strong>3. Regression features</strong></p>
+
+<p>Split features determine the splits in regression tree which provide description for the classification of pixels with similar characteristics. Regression features are used as predictors which embody properties of the neighborhood and exhibit a strong correlation to the color. 
 In the paper, regression features compose texture plus global image features (top pyramid grayscale image intensity) which occasionally brings to bad outcome due to large variation of lightness in image sets as we speculate. Therefore we dropped global image features, leave merely texture image features and obtained better results.</p>
 
-<p><strong>4. LEARCH objective function and the Bhattacharyya distance</strong>
-The final objective function is a weighted sum of LEARCH objective function and the Bhattacharyya distance which ensures spatial coherence while performing histogram correction. The complete objective function denoted as: . Adjusting  influences this trade-off as bigger  provides steeper color variation which displayed below.</p>
+<p><strong>4. LEARCH objective function and the Bhattacharyya distance</strong></p>
+
+<p>The final objective function is a weighted sum of LEARCH objective function and the Bhattacharyya distance which ensures spatial coherence while performing histogram correction. The complete objective function denoted as: . Adjusting  influences this trade-off as bigger  provides steeper color variation which displayed below.</p>
 
 <hr>
 
