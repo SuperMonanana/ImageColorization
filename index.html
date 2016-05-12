@@ -76,17 +76,13 @@
 
 <p>Basically we followed the code of our reference paper, but we had some attempts in several areas to make a better prediction.</p>
 
-<p>For all the following experiments, we have ground truth image:</p>
-
-<p><img src="https://github.com/SuperMonanana/ImageColorization/blob/master/data/colorbeach.png?raw=true" alt=""></p>
-
 <p><strong>1. Histogram correction</strong></p>
 
 <p>Desired target histogram is modeled as Gaussian mixture model and the number of components are equal to the modes obtained by performing mean-shift clustering modes in the histogram of the target images. Then corresponding modes in the histogram of source images are found with known M components of the target histogram and source histogram. In the paper, histogram correction is achieved using the scene specific mean histogram (normalized from training data). 9 noise image together with the one training image are used to compute the mean histogram. We add a fraction of ground-truth histogram from least variation training set so that multi-scene training images have less impact on specific theme result.</p>
 
 <p>The left applied mean histogram, the middle applied our modified histogram correction method, and the right is the ground truth.</p>
 
-<p><img src="https://raw.githubusercontent.com/SuperMonanana/ImageColorization/master/data/test_1_recon_color-hist_1-1.tif" alt=""> <img src="https://raw.githubusercontent.com/SuperMonanana/ImageColorization/master/data/test_1_recon_color-gt_hist_2-1.tif" alt=""> </p>
+<p><img src="https://raw.githubusercontent.com/SuperMonanana/ImageColorization/master/data/test_1_recon_color-hist_1-1.tif" alt=""> <img src="https://raw.githubusercontent.com/SuperMonanana/ImageColorization/master/data/test_1_recon_color-gt_hist_2-1.tif" alt=""> <img src="https://github.com/SuperMonanana/ImageColorization/blob/master/data/colorbeach.png?raw=true" alt=""> </p>
 
 <p><strong>2. Parameter experiment</strong></p>
 
@@ -101,6 +97,10 @@
 <p>Split features determine the splits in regression tree which provide description for the classification of pixels with similar characteristics. Regression features are used as predictors which embody properties of the neighborhood and exhibit a strong correlation to the color. 
 In the paper, regression features compose texture plus global image features (top pyramid grayscale image intensity) which occasionally brings to bad outcome due to large variation of lightness in image sets as we speculate. Therefore we dropped global image features, leave merely texture image features and obtained better results.</p>
 
+<p>We apply this histogram method and get our first best result of campus, however when we use mean histogram as in the paper, the result is as following. Obviously, our method improve the accuracy of prediction.</p>
+
+<p><img src="https://raw.githubusercontent.com/SuperMonanana/ImageColorization/master/data/meanhist.tif" alt=""></p>
+
 <p><strong>4. LEARCH objective function and the Bhattacharyya distance</strong></p>
 
 <p>The final objective function is a weighted sum of LEARCH objective function and the Bhattacharyya distance which ensures spatial coherence while performing histogram correction. The complete objective function denoted as: bDist = bDist + lambda.*bLearch. Adjusting  influences this trade-off as bigger provides steeper color variation which displayed below.</p>
@@ -108,6 +108,9 @@ In the paper, regression features compose texture plus global image features (to
 <p>Lambda=0.5, 5(the original setting in the paper), 50 are applied in the following results. Large lambda prevents modification of colors by histogram correction.</p>
 
 <p><img src="https://raw.githubusercontent.com/SuperMonanana/ImageColorization/master/data/lambda0.5.tif" alt=""> <img src="https://raw.githubusercontent.com/SuperMonanana/ImageColorization/master/data/lambda5.tif" alt=""> <img src="https://raw.githubusercontent.com/SuperMonanana/ImageColorization/master/data/lambda50.tif" alt=""></p>
+
+<p>Here is the ground truth:
+<img src="https://github.com/SuperMonanana/ImageColorization/blob/master/data/colorbeach.png?raw=true" alt=""></p>
 
 <hr>
 
