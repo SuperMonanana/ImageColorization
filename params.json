@@ -1,0 +1,6 @@
+{
+  "name": "CSE555 Final Project - Automatic Image Colorization",
+  "tagline": "Mengyan Li & Yu He",
+  "body": "### **Best result**\r\n***\r\n\r\n### **Problem definition**\r\nWhat are the specific inputs and outputs of your program.\r\n\r\n***\r\n### **Related Work**\r\nDoes your code replicate an existing paper? What is that paper? If not an exact replica, what are the closest works?\r\n\r\n***\r\n### **Algorithm**\r\nDid you exactly replicate a prior work? Almost? What differences do you have? You may use code that implements the main idea of your project, but then you must have a project that explores modifications to the basic code, a substantially different dataset or for a different purpose than the original authors intended.\r\n\r\n***\r\n### **Analysis** \r\nNow that you have used this approach, what do you think are its main strengths and weaknesses.",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
