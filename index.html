@@ -79,9 +79,9 @@
 
 <p>(1) Features to be sampled per train image</p>
 
-<p>Number of features per train image is proportional to dimension of b(I) which represents the splits in each node so that decreasing features per train image greatly shortens time while degrade reconstruction image to a slight extend.
-Img1 img2
-We tested cases: fperi=5000 V.S. fperi=1000, the latter has negligible inferior quality but far faster than the former.</p>
+<p>Number of features per train image is proportional to dimension of b(I) which represents the splits in each node so that decreasing features per train image greatly shortens time while degrade reconstruction image to a slight extend.</p>
+
+<p>We tested cases: fperi=5000 V.S. fperi=1000, the latter has negligible inferior quality but far faster than the former.</p>
 
 <p><strong>3. Regression features</strong></p>
 
@@ -92,7 +92,7 @@ In the paper, regression features compose texture plus global image features (to
 
 <p>The final objective function is a weighted sum of LEARCH objective function and the Bhattacharyya distance which ensures spatial coherence while performing histogram correction. The complete objective function denoted as: bDist = bDist + lambda.*bLearch. Adjusting  influences this trade-off as bigger provides steeper color variation which displayed below.</p>
 
-<p>Lambda=0.5, 5(the original setting in the paper), 50 are applied in the following results.</p>
+<p>Lambda=0.5, 5(the original setting in the paper), 50 are applied in the following results. Large lambda prevents modification of colors by histogram correction.</p>
 
 <p><img src="https://raw.githubusercontent.com/SuperMonanana/ImageColorization/master/data/lambda0.5.tif" alt=""> <img src="https://raw.githubusercontent.com/SuperMonanana/ImageColorization/master/data/lambda5.tif" alt=""> <img src="https://raw.githubusercontent.com/SuperMonanana/ImageColorization/master/data/lambda50.tif" alt=""></p>
 
