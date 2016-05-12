@@ -1,41 +1,29 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en-us">
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="CSE555 Final Project - Automatic Image Colorization : Mengyan Li &amp; Yu He">
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>CSE555 Final Project - Automatic Image Colorization</title>
+    <meta charset="UTF-8">
+    <title>CSE555 Final Project - Automatic Image Colorization by SuperMonanana</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
-
   <body>
+    <section class="page-header">
+      <h1 class="project-name">CSE555 Final Project - Automatic Image Colorization</h1>
+      <h2 class="project-tagline">Mengyan Li &amp; Yu He</h2>
+      <a href="https://github.com/SuperMonanana/ImageColorization" class="btn">View on GitHub</a>
+      <a href="https://github.com/SuperMonanana/ImageColorization/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/SuperMonanana/ImageColorization/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/SuperMonanana/ImageColorization">View on GitHub</a>
-
-          <h1 id="project_title">CSE555 Final Project - Automatic Image Colorization</h1>
-          <h2 id="project_tagline">Mengyan Li &amp; Yu He</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/SuperMonanana/ImageColorization/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/SuperMonanana/ImageColorization/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
+    <section class="main-content">
+      <h3>
 <a id="abstract" class="anchor" href="#abstract" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><strong>Abstract</strong>
 </h3>
 
-<p>This project focus on automatic image colorization given a greyscale input image. Different from <a href="http://www.cs.huji.ac.il/%7Eyweiss/Colorization/">Levin et al.'s</a> approach, and <a href="http://mrl.nyu.edu/projects/image-analogies/">Image Analogies</a> which rely on user interaction, this project implement a fully automatic colorization method proposed in <a href="http://vision.cs.illinois.edu/projects/lscolor/largescale_automatic_colorization.pdf">Large-scale Learning</a> which exploits a LEARCH framework to train a quadratic objective function in the chromaticity maps and then colorize the image by minimize this objective function.</p>
+<p>This project focus on automatic image colorization given a greyscale input image. Different from <a href="http://www.cs.huji.ac.il/%7Eyweiss/Colorization/">Levin et al.'s</a> approach, and <a href="http://mrl.nyu.edu/projects/image-analogies/">Image Analogies</a> which rely on user interaction, this project implement a fully automatic colorization method proposed in <a href="http://vision.cs.illinois.edu/projects/lscolor/largescale_automatic_colorization.pdf">Large-scale Learning</a> which exploits a LEARCH framework to train a quadratic objective function in the chromaticity maps and then colorize the image by minimize this objective function. We modified their code by pruning the regression tree to improve the efficiency and avoid overfitting, and we experiment different parameters, features and histogram correction method. </p>
 
 <hr>
 
@@ -74,18 +62,15 @@
 </h3>
 
 <p>Now that you have used this approach, what do you think are its main strengths and weaknesses.</p>
-      </section>
-    </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">CSE555 Final Project - Automatic Image Colorization maintained by <a href="https://github.com/SuperMonanana">SuperMonanana</a></p>
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/SuperMonanana/ImageColorization">CSE555 Final Project - Automatic Image Colorization</a> is maintained by <a href="https://github.com/SuperMonanana">SuperMonanana</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
 
-    
+    </section>
 
+  
   </body>
 </html>
