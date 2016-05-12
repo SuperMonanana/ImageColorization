@@ -45,7 +45,7 @@
 
 <p>In this project, the input is greyscale image, and the output is the corresponding colorized image. We will also include ground truth image for comparison.</p>
 
-<p>We write vectors as b and matrices as W. I is the input grey-level image and c is the set of color layers we wish to infer, rearranged into a vector. Our goal is to learn a quadratic optimization problem in c. The coefficients of the objective function are conditioned on image features, using a random forest of regression tree. Images are then colorized by minimizing this objective function.</p>
+<p>We have the input grey-level image and wish to infer the set of color layers, rearrange it into a vector. Our goal is to learn a quadratic optimization problem in the set of color layers. The coefficients of the objective function are conditioned on image features, using a random forest of regression tree. Images are then colorized by minimizing this objective function.</p>
 
 <hr>
 
@@ -65,7 +65,7 @@
 
 <p>For all the following experiments, we have ground truth image:</p>
 
-<p><img alt=""></p>
+<p><img src="https://github.com/SuperMonanana/ImageColorization/blob/master/data/colorbeach.png?raw=true" alt=""></p>
 
 <p><strong>1. Histogram correction</strong></p>
 
