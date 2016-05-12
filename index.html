@@ -64,7 +64,13 @@
 <a id="algorithm" class="anchor" href="#algorithm" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><strong>Algorithm</strong>
 </h3>
 
-<p>We basically followed the structure of our reference paper, but we made some improvements to achieve better output image quality and faster reconstruction speed.</p>
+<p>We learn an objective function and optimize it to get the correct colorization.</p>
+
+<p><img src="https://raw.githubusercontent.com/SuperMonanana/ImageColorization/master/data/objective%20fcn.tiff" alt=""> </p>
+
+<p><img src="https://raw.githubusercontent.com/SuperMonanana/ImageColorization/master/data/margin.tiff" alt=""></p>
+
+<p>Basically we followed the code of our reference paper, but we had some attempts in several areas to make a better prediction.</p>
 
 <p>For all the following experiments, we have ground truth image:</p>
 
@@ -80,7 +86,7 @@
 
 <p><strong>2. Parameter experiment</strong></p>
 
-<p>(1) Features to be sampled per train image</p>
+<p>Features to be sampled per train image</p>
 
 <p>Number of features per train image is proportional to dimension of b(I) which represents the splits in each node so that decreasing features per train image greatly shortens time while degrade reconstruction image to a slight extend.</p>
 
@@ -108,7 +114,7 @@ In the paper, regression features compose texture plus global image features (to
 <p>Failed case is like this from which we can see the limit of this method.
 <img src="https://raw.githubusercontent.com/SuperMonanana/ImageColorization/master/data/campusfail.tif" alt=""> <img src="https://github.com/SuperMonanana/ImageColorization/blob/master/data/color_failresize.png?raw=true" alt=""> </p>
 
-<p>We suppose it is difficult for this method to predict picture with more depth of field because it is harder to extract features that special enough to represents a patch in regions with more depth which is usually smaller. Also from the successful cases in Best Results section, we found that the performance is always better when predicting the sky because of the bigger contrast between sky and the other parts of the image, which should reflect the grey-image intensity as it is an important split feature.</p>
+<p>We suppose it is difficult for this method to predict picture with more depth of field because it is harder to extract features that special enough to represents a patch in regions with more depth which is usually smaller. Also from the successful cases in Best Results section, we found that the performance is always better when predicting the sky because of the bigger contrast between sky and the other parts of the image, which should reflect the grey-image intensity as it is an important split feature. </p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/SuperMonanana/ImageColorization">CSE555 Final Project - Automatic Image Colorization</a> is maintained by <a href="https://github.com/SuperMonanana">SuperMonanana</a>.</span>
